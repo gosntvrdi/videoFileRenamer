@@ -1,6 +1,6 @@
 import os
 import string
-
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 morningDir = '/videos/morning'
 dayDir = '/videos/day'
@@ -12,5 +12,6 @@ def videoFileRenamer(location):
 
 
 
-videoFileRenamer(morningDir)
-videoFileRenamer(dayDir)
+scheduler = BlockingScheduler()
+scheduler.add_job(dlVideo, trigger='interval', hours=1, max_instances=1)
+scheduler.start()
