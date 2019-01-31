@@ -2,8 +2,8 @@ import os
 import string
 
 
-morningDir = '/media/songftptodb/morning'
-dayDir = '/media/songftptodb/day'
+morningDir = '/videos/morning'
+dayDir = '/videos/day'
 
 def videoFileRenamer(location):
     for fileName in os.listdir(location):
