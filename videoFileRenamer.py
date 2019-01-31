@@ -15,7 +15,6 @@ def videoFileRenamer(path):
             os.rename(os.path.join(dir,file), os.path.join(dir, "".join(filter(lambda x:x not in bad_chars, file))))
 
 
-videoFileRenamer(dayDir)
-# scheduler = BlockingScheduler()
-# scheduler.add_job(videoFileRenamer, trigger='interval', hours=1, max_instances=1)
-# scheduler.start()
+scheduler = BlockingScheduler()
+scheduler.add_job(videoFileRenamer, trigger='interval', hours=1, max_instances=1)
+scheduler.start()
